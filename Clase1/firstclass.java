@@ -1,29 +1,34 @@
-public static void main (String Args[]){
-    System.out.println("If you´re reading this, hi")
+public class firstclass{
+    public static void main(String Args[]) {
+        System.out.println("Ya me hartó la 40tena");
+        //Declarar variables
 
+        //Holaa
+        //ints
+        int integerName = 0;
         //Strings
+        String stringName = "Holaaa";
         //booleans
+        boolean estaPresionandoBoton = true; //false
+        boolean isArriba = false;
+        //doubles
+        double valorDecimal = 0.0;
 
-    //ints
-    int integerName= 2;
-    //strings
-    String stringName="Holaa";
-    //booleans
-    boolean isVerdad = false; //false
-    //doubles
-    double valorDecimal=0.0;
+        System.out.println(integerName + " " + stringName);
 
-    System.out.println(integerName+ "" + stringName);
+        //Condiciones
+        if ( estaPresionandoBoton && /*And*/ !(isArriba)){ //Negando una condición
+            //Moverme hacia adelante
+            System.out.println("Avanza!!!");
+            
+        }
+        if (integerName == 0/*Como comparamos, le ponemos doble igual*/){
+            //Cerrar una pinza
+            System.out.println("El int vale 0: ");
+        }else{
+            System.out.println("Else!!: ");
+        }
 
-    //Condiciones
-    if ( !(isVerdad))//Negando una condición
-    System.out.println("Valor decimal: " + valorDecimal);
-}else if (integerNmae == 0 /*como comparamos, le ponemos doble igual)*/){
-    System.out.println("El int vale 2: ");
-}else{
-    Systema.out.println("Else!: ");
-}
-}
 
     }
 }
