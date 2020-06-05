@@ -1,7 +1,8 @@
 public static void main (String Args[]){
     System.out.println("If you´re reading this, hi")
 
-    //Declarar variables
+        //Strings
+        //booleans
 
     //ints
     int integerName= 2;
