@@ -12,7 +12,7 @@ public class firstclass{
         boolean estaPresionandoBoton = true; //false
         boolean isArriba = false;
         //doubles
-        double valorDecimal = 0.0;
+        //MARCA ERROR double valorDecimal = 0.0;
 
         System.out.println(integerName + " " + stringName);
 
