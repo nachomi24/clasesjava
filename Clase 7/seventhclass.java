@@ -4,7 +4,7 @@
 
 public class seventhclass {
     public static void main(String[] args) {
-        //Rectangulo
+      //Rectangulo
         Rectangulo rectangulo1 = new Rectangulo (4,4);
         rectangulo1.dibujarRectangulo("* ");
         System.out.println("El area del rectangulo es: " + calcularAreaRectangulo(4, 4));
@@ -18,6 +18,17 @@ public class seventhclass {
         Triangulo triangulo2 = new Triangulo (4,4);
         triangulo2.dibujarTri2("* ");
         System.out.println("El area del triangulo es: " + calcularAreaTriangulo(4,4));
+             
+        //Piramide
+        Piramide piramide1 = new Piramide(4);
+        piramide1.printPiramide();
+
+        //Casita
+        Piramide techo = new Piramide(4);
+        techo.printPiramide();
+        Rectangulo casa1 = new Rectangulo (4,4);
+        casa1.dibujarRectangulo("* ");
+
         
         /**
          * Crea la clase rectángulo
@@ -68,7 +79,7 @@ public class seventhclass {
          *   * * * * * * *
          *   * * * * * * *
          *   * * * * * * *
-         */
+        */
 
 
     }
@@ -92,5 +103,8 @@ public class seventhclass {
             }
             System.out.println("");
         }
+    } public String [][] dibujar (){
+        String [] [] arrayBi = new String [3][2];
+        return arrayBi;
     }
 }
