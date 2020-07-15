@@ -1,4 +1,4 @@
-//package ClasesJava.Clase6;
+package ClasesJava.Clase6;
 
 public class Alumno {
     //La siguiente clase tiene un par de errores

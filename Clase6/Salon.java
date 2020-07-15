@@ -8,7 +8,7 @@ package ClasesJava.Clase6;
         // Salón DONE
 public class Salon {
     String profesor;
-    boolean salon; 
+    String salon; 
     Alumno alumnosDeLaClase [] = {
         new Alumno("Juanito", 10 ),
         new Alumno("Pedrito", 11),
@@ -24,17 +24,27 @@ public class Salon {
      * @param nombreAlumno
      * @return true si está, false si no
      */
-    public boolean estaRegistrado(String nombreAlumno){
+    public boolean estaRegistrado(final String nombreAlumno){
 
-        for (Alumno integrante: alumnosDeLaClase){
+        for (final Alumno integrante: alumnosDeLaClase){
             if (integrante.getNombre().equals(nombreAlumno))
-            {
+            {for (final Alumno integrante: asistentes_de_hoy){
+                if (integrante.setAsistencias(//aquí poner algo pero no sé qué; )
+            }
                 return true;
             }
-                
+            
         }
         return false;
-    }        
+    }     
+    
+    for (final Alumno integrante: alumnosDeLaClase){
+        if (integrante.getNombre().equals(edad)){
+         for (final Alumno integrante: alumnosDeLaClase){
+
+         }
+        }
+    }
     
     /**
      * Dado un array de alumnos, 
@@ -44,24 +54,24 @@ public class Salon {
      * @param asistencias
      * @return número de faltantes
      */
-    public int alumnosFaltantes(Alumno[] asistencias){
-        int faltantes = 0;
-        for (Alumno integrante: alumnosDeLaClase){
+    public int alumnosFaltantes(final Alumno[] asistencias){
+        final int faltantes = 0;
+        for (final Alumno integrante: alumnosDeLaClase){
             if (integrante.getAsistencias().equals(asistencias))
         { if (asistencias>8) {
 
         }
             return asistencias;
         }
-        return faltantes;
+        return faltantes;}
     }
     
 
     public void mostrarSalon(){
-        System.out.println("La clase del profesor: ");
-        System.out.println("Está en el salón: ");
-        System.out.println("Sus alumnos son: ");
-        for (Alumno integrante: alumnosDeLaClase){
+        System.out.println("La clase del profesor: " + profesor);
+        System.out.println("Está en el salón: " + Salón);
+        System.out.println("Sus alumnos son: "+ alumnosDeLaClase);
+        for (final Alumno integrante: alumnosDeLaClase){
             System.out.print("\t");
             integrante.show();
         }
