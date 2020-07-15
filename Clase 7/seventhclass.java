@@ -8,6 +8,7 @@ public class seventhclass {
         Rectangulo rectangulo1 = new Rectangulo (4,4);
         rectangulo1.dibujarRectangulo("* ");
         System.out.println("El area del rectangulo es: " + calcularAreaRectangulo(4, 4));
+        System.out.println("HOLAAAA");
         
         //Triangulo de arriba a abajo
         Triangulo triangulo1 = new Triangulo (4,4);

@@ -1,54 +1,68 @@
-import java.awt.Graphics;
-
 public class eightclass {
 
-    public static void main(String[] args, Graphics g) {
-        //Cuadrilatero
-          Cuadrilatero cuadrilatero1 = new Cuadrilatero (4,4, true, false);
-          cuadrilatero1.dibujarCuadrilatero("* ");
-          cuadrilatero1.esCuadrado(4, 4, true);
-          cuadrilatero1.esRectangulo(4,4, false);
-          System.out.println("El area del cuadrilatero es: " + calcularAreaCuadrilatero(4, 4));
-          System.out.println("El perimetro del cuadrilatero es: " + calcularPerimetroCuadrilatero(4, 4));
-
-        //Triangulo
-        Tryangulo tryangulo1 = new Tryangulo (2,4, 4, 4);
-        tryangulo1.dibujarTri1("* ");
-        System.out.println("El area del triangulo es: " + calcularAreaTriangulo(4, 4));
-        System.out.println("El perimetro del triangulo es: " + calcularPerimetroTriangulo(1, 2, 3));
+    public static void main(String[] args) {
+        //Punto
+        System.out.println("El punto:");
+        PuntoCartesiano punto1 = new PuntoCartesiano (2,4);
+        punto1.getCoords();
+        System.out.println(" ");
 
         //Linea
-        Linea linea1 = new Linea();
-        linea1.dibujarlinea(g);
-        System.out.println("Las líneas son paralelas? " + sonParalelos(4,4));
-        linea1.printPoint1(2,4);
-        linea1.printPoint2(4,4);
-    }
+        System.out.println("La linea:");
+        Linea linea1 = new Linea(4,-2,2,4); //x1,x2,y1,y2
+        Linea linea2 = new Linea(0,1,2,5); //x1,x2,y1,y2
+        System.out.println("La distancia es:" + linea1.distancia());
+        if (linea1.sonParalelos(linea2)) {
+            System.out.println("Son paralelas"); }
+            else{ System.out.println("No son paralelas");}
+        if (linea1.sonPerpendiculares(linea2)) {
+            System.out.println("Son perpendiculares"); }
+            else{System.out.println("No son perpendiculares");}
+        System.out.println(" ");
 
-        private static boolean sonParalelos(double mlinea1, double mlinea2) {
-            if (mlinea1==mlinea2);
-            System.out.println("Son paralelas");
-            return true;
-        }
+        //Triangulo
+        System.out.println("El triangulo: ");
+        Tryangulo triangulo1 = new Tryangulo(-2,0,2,0,4,0); // x1,x2,x3,y1,y2,y3
+        System.out.println("El lado a mide: " + triangulo1.sidea());
+        System.out.println("El lado b mide: " + triangulo1.sideb());
+        System.out.println("El lado c mide: " + triangulo1.sidec());
+        System.out.println("El perimetro del triangulo es: " + triangulo1.perimetroTriangulo(triangulo1));
+        System.out.println("El area es: " + triangulo1.areaTriangulo(triangulo1));
+        
+        if (triangulo1.esEquilatero(triangulo1)) {
+            System.out.println("Es equilatero");}
+            else{ System.out.println("No es equilatero");}
 
-
-        private static int calcularAreaCuadrilatero(int base, int altura) {
-            int area= base*altura;
-            return area;
-        }
-
-        private static int calcularPerimetroCuadrilatero(int base, int altura){
-            int perimetro= ((base*2)+(altura*2));
-            return perimetro; 
-        }
-
-        private static int calcularAreaTriangulo(int h, int c){
-            int areaTri= (h*c)/2;
-            return areaTri;
-        }
-
-        private static int calcularPerimetroTriangulo(int a, int b, int c){
-            int perimetroTri= a+b+c;
-            return perimetroTri;
+        if (triangulo1.esIsoceles(triangulo1)) {
+            System.out.println("Es Isóceles");}
+            else{ System.out.println("No es Isóceles");}
+        
+        if (triangulo1.esEscaleno(triangulo1)) {
+            System.out.println("Es Escaleno");}
+            else{ System.out.println("No es Escaleno");}
+        
+        System.out.println(" ");
+        
+        //Cuadrilatero
+        System.out.println("El cuadrilatero: ");
+        Cuadrilatero cuadrilatero1 = new Cuadrilatero(0,2,0,0,4,0,4,2); //x1,y1,x2,y2,x3,y3,x4,y4
+        System.out.println("El lado 1 mide: " + cuadrilatero1.lado1());
+        System.out.println("El lado 2 mide: " + cuadrilatero1.lado2());
+        System.out.println("El lado 3 mide: " + cuadrilatero1.lado3());
+        System.out.println("El lado 4 mide: " + cuadrilatero1.lado4());
+        System.out.println("El perimetro es: " + cuadrilatero1.perimetroCuadrilatero(cuadrilatero1));
+        System.out.println("El area es: " + cuadrilatero1.areaCuadrilatero(cuadrilatero1));
+        
+        if (cuadrilatero1.esCuadrado(cuadrilatero1)){
+            System.out.println("Es un cuadrado");}
+            else{ System.out.println("No es un cuadrado");}
+        
+        if (cuadrilatero1.esRectangulo(cuadrilatero1)){
+            System.out.println("Es un rectángulo");}
+            else{ System.out.println("No es un rectángulo");}
+        
+        if (cuadrilatero1.esIrregular(cuadrilatero1)){
+            System.out.println("Es irregular");}
+            else{ System.out.println("No es irregular");}
         }
 }

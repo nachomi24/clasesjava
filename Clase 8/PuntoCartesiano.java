@@ -1,20 +1,33 @@
 public class PuntoCartesiano {
-        //Atributos:
-        int ancho = 10;
-        int alto = 10;
-        int x1;
-        int y1;
+    //Atributos:
+    double x;
+    double y;
     
     //Constructor
-    public PuntoCartesiano(){
-    String [][] mapita = new String [alto] [ancho];{
-    mapita[x1][y1] = "*" ;
-    printArray(mapita);
-        }    
-        // no sé como hacerle T-T aiuda
+    public PuntoCartesiano(double x, Double y){
+        this.x=x;
+        this.y=y;
     }
 
-    private void printArray(String[][] mapita) {
+    public PuntoCartesiano(int x, int y){
+        this.x=x;
+        this.y=y;
+    }
+ 
+    //Getters
+    public double getX(){
+        return x;
+    }
+
+    public double getY(){
+        return y;
+    }
+
+    public void getCoords(){
+        System.out.println("Las coordenadas (x,y) son: " );
+        System.out.println("(" + x + "," + y + ")" );
     }
     
+
+
 }

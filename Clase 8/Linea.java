@@ -1,48 +1,50 @@
-import java.awt.Graphics;
 import java.lang.Math;
 
 class Linea {
-    int x1;
-    int x2;
-    int y1;
-    int y2;
+    //atributos
+    PuntoCartesiano punto1;
+    PuntoCartesiano punto2;
 
+    //constructor
+    public Linea (double x1, double x2, double y1, double y2){
+        this.punto1= new PuntoCartesiano(x1,y1);
+        this.punto2= new PuntoCartesiano(x2,y2);
+    }
+
+    public double distancia() {
+        double a= punto1.getX()-punto2.getX();
+        double b = punto1.getY()-punto2.getY();
+        double c = Math.hypot (a,b);
+        return c;
+        //System.out.println("La distancia de la linea es: " + distancia);
+    }
+
+    public void printPoint1(){
+       punto1.getCoords();
+    }
     
-
-    public void dibujarlinea(Graphics g){
-        g.drawLine(0, 480, 960, 480);
+    public void printPoint2(){
+        punto1.getCoords();
     }
 
-    public double distancia(int x1, int x2, int y1, int y2) {
-        double distancia = Math.sqrt((x2-x1)*(x2-x1))+((y2-y1)*(y2-y1));
-        return distancia;
-    }
-
-    public int printPoint1 (int x1, int y1){
-       int coordi1 = (x1 + y1);
-       return coordi1;
-    }
-    
-    public int printPoint2 (int x2, int y2){
-        int coordi2 = (x2 + y2);
-        return coordi2;
-    }
-
-    public double mlinea1 (int x1, int x2, int y1, int y2){
-        double mlinea1 = ((y2-y1)/(x2-x1)); //where m stands for slope
-        return mlinea1;
+    public double slope (){
+        double slope = ((punto1.getY()-punto2.getY())/(punto1.getX()-punto2.getX())); 
+        return slope;
     }
        
-    public double mlinea2 (int x1, int x2, int y1, int y2){
-        double mlinea2 = ((y2-y1)/(x2-x1)); //where m stands for slope of line 2
-        return mlinea2;
-    }
-       
-    public boolean sonParalelos (double mlinea1, double mlinea2){
-        if (mlinea1==mlinea2);
-        System.out.println("Son paralelas");
+    public boolean sonParalelos (Linea linea1){
+        if (linea1.slope() == slope()){
         return true;
+        }else{
+            return false;
+        }  
+    } 
+
+    public boolean sonPerpendiculares (Linea linea1){
+        if ((linea1.slope() * slope() == -1) ){
+            return true;
+        }else{
+            return false; 
+        }
     }
-    
-    
 }
