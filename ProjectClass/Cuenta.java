@@ -8,7 +8,12 @@ public class Cuenta {
     double accionPrevia;
 
     public void Acciones(String string, int i) {
-	}
+    }
+    
+    //tener una varibale estatica cambia de valor cada que se crea una nueva cuenta, para
+    //saber cuantas cuentas hay y agregar las iniciales de la persona
+    public static void idUnico(){
+    }
 
 	public String nombreUsuario(){
         Scanner teclado = new Scanner (System.in);
@@ -21,7 +26,7 @@ public class Cuenta {
         Scanner teclado = new Scanner (System.in);
         String idUsuario, input;
         int intentos;
-        idUsuario="0208";
+        idUsuario="1234";
         intentos= 0;
         while (intentos<3){
             System.out.println("Ingresa tu contraseña: ");
@@ -42,7 +47,6 @@ public class Cuenta {
        dineroEnCuenta = teclado.nextDouble();
        return dineroEnCuenta;
     }
-
 
     //Métodos deposito, retiro, transferencia
 
@@ -67,8 +71,20 @@ public class Cuenta {
         else if(accionPrevia < 0 ){
             System.out.println("Se han retirado: "+ Math.abs(accionPrevia));}
     }
+    
+    void nuevaCuenta( ) {
+        Scanner teclado = new Scanner (System.in);
+        System.out.println("Ingrese su nombre completo");
+        nombreUsuario=teclado.next();
+        System.out.println("Ingrese una contraseña");
+        idUsuario= teclado.nextLine();
+        System.out.println("Ingrese el dinero a depositar en la nueva cuenta");
+        dineroEnCuenta= teclado.nextDouble();
+        System.out.println("Se ha creado exitosamente su cuenta");
+    
+    }
             
-    //Mostrar y sellecionar opciones 
+    //Mostrar y seleccionar opciones 
     void acciones(){
         char accion;
         Scanner teclado = new Scanner (System.in);
@@ -78,7 +94,7 @@ public class Cuenta {
         System.out.println("A. Checar estatus de la cuenta");
         System.out.println("B. Depositar");
         System.out.println("C. Retirar");
-        System.out.println("D. Transferir");
+        System.out.println("D. Crear nueva cuenta");
         System.out.println("E. Transacción previa");
         System.out.println("F. Salir");
         
@@ -104,19 +120,21 @@ public class Cuenta {
           break;
 
           case 'D' :
-          System.out.println("Ingrese monto a transferir");
+          nuevaCuenta();
           break;
-
+    
           case 'E' :
           getAccionPrevia();
           break;
 
           default:
           //if (accion != ('A'|| 'B'|| 'C' || 'D' || 'E' || 'F' )){
-          System.out.println("¡Opción no válida! Ingrese una opción.");SS
+          System.out.println("¡Opción no válida! Ingrese una opción.");
           break;
         }
         }while(accion != 'F');
         System.out.println("Gracias por usar los servicios Bancomi");
         teclado.close();  }
+        
+        
 }
